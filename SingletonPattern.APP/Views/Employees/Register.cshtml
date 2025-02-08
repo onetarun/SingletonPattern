@@ -1,0 +1,102 @@
+﻿@model SingletonPattern.APP.DTOs.EmployeeDTO
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form asp-action="Register" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input type="text" name="FirstName" class="form-control" placeholder="First Name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="EmailAddress">Email Address</label>
+        <input type="email" name="EmailAddress" class="form-control" placeholder="Email Address" required />
+    </div>
+
+    <div class="form-group">
+        <label for="MobileNumber">Mobile Number</label>
+        <input type="text" name="MobileNumber" class="form-control" placeholder="Mobile Number" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PanNumber">Pan Number</label>
+        <input type="text" name="PanNumber" class="form-control" placeholder="Pan Number" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PassportNumber">Passport Number</label>
+        <input type="text" name="PassportNumber" class="form-control" placeholder="Passport Number" required />
+    </div>
+
+    <div class="form-group">
+        <label for="DateOfBirth">Date of Birth</label>
+        <input type="date" name="DateOfBirth" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="DateOfJoinee">Date of Joinee</label>
+        <input type="date" name="DateOfJoinee" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="CountryId">Country</label>
+        <select id="CountryId" name="CountryId" class="form-control select2" required>
+            <option value="">Select Country</option>
+            @foreach (var country in Model.Countries)
+            {
+                <option value="@country.Row_Id">@country.CountryName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="StateId">State</label>
+        <select id="StateId" name="StateId" class="form-control select2" required disabled>
+            <option value="">Select State</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CityId">City</label>
+        <select id="CityId" name="CityId" class="form-control select2" required disabled>
+            <option value="">Select City</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ProfileImage">Profile Picture</label>
+        <input type="file" name="ProfileImage" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label><br />
+        <label><input type="radio" name="Gender" value="0" required /> Male</label>
+        <label><input type="radio" name="Gender" value="1" /> Female</label>
+    </div>
+
+    <div class="form-group">
+        <label for="IsActive">Active</label>
+        <label><input type="checkbox" name="IsActive" value="true" /> Active</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    
+</form>
+@section scripts{
+   
+@* <script> *@
+@*            $(document).ready(function () { *@
+@*                $('.select2').select2(); *@
+@*            }); *@
+           
+@* </script> *@
+ <script src="~/js/cascade.js"></script>
+}
+

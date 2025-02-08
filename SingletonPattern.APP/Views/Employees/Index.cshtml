@@ -1,0 +1,58 @@
+﻿<div class="container p-4">
+    <div class="row p-3">
+        <div class="col-6">
+            <h2 class="text-primary">List of Employees</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-action="Register" asp-controller="Employees"><i class="bi bi-plus-circle"></i>&nbsp;Create New Employee</a>
+        </div>
+    </div>
+
+</div>
+
+<table id="myTable" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Pan No
+            </th>
+            <th>
+                Passport No
+            </th>
+            <th>
+               Gender
+            </th>
+            <th>
+                isActive
+            </th>
+            <th>
+                Profile Image
+            </th>
+
+            <th>
+                Action
+            </th>
+
+        </tr>
+
+    </thead>
+
+
+</table>
+
+@section scripts {
+    <script src="~/js/Employee.js"></script>
+}
+
